@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import {
+  useGetAllPostQuery,
+  useGetPostByIdQuery,
+  useGetPostByLimitQuery,
+  useDeletePostMutation,
+  useCreatePostMutation
+} from "./services/post";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  // get all data
+  // const responseInfo = useGetAllPostQuery()
+
+  // get data by Id
+  // const responseInfo =useGetPostByIdQuery(5)
+
+  // get limited data
+  // const responseInfo = useGetPostByLimitQuery(4);
+  // console.log(responseInfo);
+
+  // Delete 
+  // const [deletePost, responseInfo] = useDeletePostMutation();
+  const [createPost, responseInfo] = useCreatePostMutation();
+  console.log(responseInfo)
+  return <div className="App">{/* Get single data */}
+    {/* <button onClick={()=>deletePost(2)}>Delete Post</button> */}
+  </div>;
 }
 
 export default App;
